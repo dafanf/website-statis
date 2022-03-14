@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read JSON Files</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/main.css?ver=1.1.0" rel="stylesheet">
+    <noscript>
+        <style type="text/css">
+          [data-aos] {
+              opacity: 1 !important;
+              transform: translate(0) scale(1) !important;
+          }
+        </style>
+      </noscript>
+</head>
+<body>
+    <div class="profile-page sidebar-collapse">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
+          <div class="container">
+            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip">Creative CV</a>
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="read-json.html">Web Scrapping</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="profile-page">
+        <div class="wrapper">
+          <div class="page-header page-header-small" filter-color="green">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg')"></div>
+            <div class="container">
+              <div class="content-center">
+                <div class="cc-profile-image"><a href="#"><img src="images/dafa.png" alt="Image"/></a></div>
+                <div class="h2 title">Dafa Nurul Fauziansyah</div>
+                <p class="category text-white">Professional Food Tester</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+              </div>
+            </div>
+            <div class="section">
+              <div class="container">
+                <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" href="https://web.facebook.com/dafa.n.fauziansyah" rel="tooltip" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="https://github.com/dafanf" rel="tooltip" title="Check my github"><i class="fa fa-github"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="mailto:dafa.nurul.tif421@polban.ac.id" rel="tooltip" title="Send me an email"><i class="fa fa-google"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.instagram.com/dafanf_7/" rel="tooltip" title="Follow me on Instagram"><i class="fa fa-instagram"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="about">
+        <div class="container">
+          <div class="card" data-aos="fade-up" data-aos-offset="10">
+            <div class="row">
+                <div class="h4 text-center title">Headline Berita</div>
+              <div class="col-lg-12 col-md-12">
+                <div class="card-body" id="headline_json">
+                  <!-- <div class="h4 mt-0 title">Basic Information</div>
+                  <div class="row">
+                    <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
+                    <div class="col-sm-8">19</div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
+                    <div class="col-sm-8">dafa.nurul.tif421@polban.ac.id</div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
+                    <div class="col-sm-8">+62 881-822-4180</div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
+                    <div class="col-sm-8">Jl Sangkuriang Barat 2 Cipageran, Cimahi Utara, Cimahi</div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
+                    <div class="col-sm-8">Indonesia, Inggris, Sunda</div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script>
+        $(function(){
+            $.get('JSON/data_atribut.json', function(obj){
+                var str = "<div class=table-responsive-md><table class=table table-stripped table-bordered>";
+                str +="<tr class=table-dark><td>No</td><td class='tables'>Judul Headline</td><td class='tables'>Kategori</td><td class='tables'>Waktu Publish</td><td class='tables'>Waktu Scrapping</td></tr>";
+                $.each(obj,function(n,data){
+                    str +="<tr class=table-light><td>" + (n+1) + "</td>";
+                    str +="<td>" + data.judul + "</td>";
+                    str +="<td class='tables'>" + data.kategori + "</td>";
+                    str +="<td class='tables'>" + data.waktu_publish + "</td>";
+                    str +="<td class='tables'>" + data.waktu_scraping + "</td></tr>";
+                });
+                str +="</table></div>";
+                $('#headline_json').html(str);
+            });
+        });
+    </script>
+    <script src="js/core/popper.min.js?ver=1.1.0"></script>
+    <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
+    <script src="js/now-ui-kit.js?ver=1.1.0"></script>
+    <script src="js/aos.js?ver=1.1.0"></script>
+    <script src="scripts/main.js?ver=1.1.0"></script>
+</body>
+</html>
